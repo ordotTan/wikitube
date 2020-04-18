@@ -1,6 +1,6 @@
 'use strict'
 
-const API_KEY = 'AIzaSyAxaWfcCWnZgFFEtSBDU8r6DDIaH8H11bg'
+const API_KEY = ''
 const SERCHED_WORDS_KEY = 'searched_words'
 var gWords = []
 
