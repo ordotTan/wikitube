@@ -40,7 +40,7 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    background-color: lightblue;
+    background-color: #c76862;
     width: 30vw;
     padding: 10px;
     border-radius: 10px;
@@ -67,6 +67,7 @@ header span {
 
 
 .search {
+    display: flex;
     margin-right: 10px;
     align-items: center ;
     justify-content: center;
@@ -115,7 +116,7 @@ iframe {
 .wiki-box {
     margin-top: 10px;
     margin-bottom:10px;
-    background-color: lightblue;
+    background-color: #0a509052;
     padding: 10px;
     border-radius: 10px;
     border:1px solid black;
@@ -161,11 +162,15 @@ button:hover {
 .search-word {
     padding: 5px;
     margin:5px;
-    background-color: lightcyan;
+    background-color: #9e9e9ee8;
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
 }
+.search-word:hover {
+    opacity: 0.7;
+}
+
 
 
 .popup {

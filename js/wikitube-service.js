@@ -1,12 +1,12 @@
 'use strict'
 
-const API_KEY = ''
+const API_KEY = 'AIzaSyAxaWfcCWnZgFFEtSBDU8r6DDIaH8H11bg'
 const SERCHED_WORDS_KEY = 'searched_words'
 var gWords = []
 
 
 function getWikiData(searchWord) {
-    return axios.get(`https://en.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=${searchWord}&limit=5`)
+    return axios.get(`https://en.wikipedia.org/w/api.php?&origin=*&action=opensearch&search=${searchWord}&limit=3`)
         .then(res => {
             return res.data;
         })
@@ -36,7 +36,7 @@ function getYoutubeData(inputSearchWord) {
         }
     }
     console.log('from server')
-    return axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet &videoEmbeddable=true&type=video&key=${API_KEY}&q=${inputSearchWord}`)
+    return axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet &videoEmbeddable=true&type=video&key=${API_KEY}&q=${inputSearchWord}&maxResults=10`)
         .then(res => {
             saveToStorage(inputSearchWord.toLowerCase(), res.data)
             const wordFound = gWords.find(word => (word === inputSearchWord))
@@ -44,7 +44,7 @@ function getYoutubeData(inputSearchWord) {
                 gWords.push(inputSearchWord.toLowerCase())
                 saveToStorage(SERCHED_WORDS_KEY, gWords)  
             }
-            console.log(res.data)
+          //  console.log(res.data)
             return res.data;
         })
         .catch((err) => {

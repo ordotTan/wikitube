@@ -1,4 +1,4 @@
-var gSearchedWord
+//var gSearchedWord
 
 var gKeepResolve; // is used to keep the "resolved" when the user actually click on the color picker modal
 
@@ -9,10 +9,19 @@ function onInit() {
     triggerAPIs('bush') // Default intial search
 }
 
+
+function onSubmitForm(ev) {
+    ev.preventDefault();
+    const searchedWord = document.querySelector('input').value
+    if (searchedWord.length === 0) return
+    //gSearchedWord = searchedWord
+    triggerAPIs(searchedWord)
+}
+
 function onClickSearch() {
     const searchedWord = document.querySelector('input').value
     if (searchedWord.length === 0) return
-    gSearchedWord = searchedWord
+    //gSearchedWord = searchedWord
     triggerAPIs(searchedWord)
 }
 

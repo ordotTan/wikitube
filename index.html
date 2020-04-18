@@ -17,7 +17,10 @@
             <h1><span>W</span>iki<span>T</span>ube</h1>
         </div>
         <div class="search">
-            <input type="text" placeholder="Search" onChange="onClickSearch()">
+            <form onsubmit="onSubmitForm(event)">
+              <input type="text" placeholder="Search">
+              <input type="submit" hidden>
+            </form>
             <button class="search-btn" onclick ="onClickSearch()">Search</button>
             <button onclick ="onChangeTheme()">Change Theme</button>
         </div>
@@ -34,19 +37,19 @@
     </section>
 
     <main class="main-content container">
+        
         <section class="movies">
             <secion class="movies-content">
             </secion>
         </section>
 
-        <section class="">
+        <section class="player-and-wiki-content">
             <div class="main-movie">
                 <iframe></iframe>
             </div>
             <div class="wiki-content">
             </div>
         </section>
-
     </main>
 
     <footer class="container">
