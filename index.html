@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/youtube_favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <title>WikiTube</title>
+</head>
+
+<body onload="onInit()">
+    <header class="container">
+        <div class="logo">
+            <h1><span>W</span>iki<span>T</span>ube</h1>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search" onChange="onClickSearch()">
+            <button class="search-btn" onclick ="onClickSearch()">Search</button>
+            <button onclick ="onChangeTheme()">Change Theme</button>
+        </div>
+    </header>
+    <section class="popup" hidden>
+        <label class="themePicker" for="themeColor">Choose Color</label><input class="themePicker" type="color" id="themeColor" name="themeColor" value="#FFFFFF"> 
+        <button class="confirm-btn" onclick="onUserRes(true)">Confirm</button>
+        <button class="dismiss-btn" onclick="onUserRes(false)">Cancel</button>
+    </section>
+
+    <section class="container">
+        <div class="searched-words-content">
+        </div>
+    </section>
+
+    <main class="main-content container">
+        <section class="movies">
+            <secion class="movies-content">
+            </secion>
+        </section>
+
+        <section class="">
+            <div class="main-movie">
+                <iframe></iframe>
+            </div>
+            <div class="wiki-content">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container">
+        <small>All rights reserved</small>
+    </footer>
+
+   
+    <script src="lib/swal.js"></script>
+    <script src="lib/axios.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/wikitube-service.js"></script>
+    <script src="js/wikitube-controller.js"></script>
+</body>
+
+</html>
